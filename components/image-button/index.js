@@ -15,7 +15,7 @@ Component({
   },
 
   attached() {
-    console.log(this.properties.openType)
+
   },
   methods: {
     onGetUserInfo(event) {

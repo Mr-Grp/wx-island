@@ -1,0 +1,13 @@
+  var highlight = function (index) {
+    if (index == 0) {
+      return 'ex-tag1'
+    }
+    if (index == 1) {
+      return 'ex-tag2'
+    }
+    return ''
+  }
+
+  module.exports = {
+    highlight: highlight
+  }

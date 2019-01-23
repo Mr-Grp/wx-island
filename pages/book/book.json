@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+      "g-book": "/components/book/index"
+  }
+}
