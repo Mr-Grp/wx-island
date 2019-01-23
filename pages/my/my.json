@@ -1,1 +1,8 @@
-{}
+{
+  "usingComponents":{
+    "g-tag": "/components/tag/index",
+    "g-button": "/components/image-button/index",
+    "g-preview": "/components/preview/index"
+  },
+  "backgroundColor":"#f5f5f5"
+}

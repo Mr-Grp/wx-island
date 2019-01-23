@@ -39,6 +39,21 @@ class ClassicModel extends HTTP {
     return key
   }
 
+  getMyFavor() {
+    return this.request({
+      url: 'classic/favor'
+    })
+  }
+
+  getById({
+    cid,
+    type
+  }) {
+    return this.request({
+      url: `classic/${type}/${cid}`,
+    })
+  }
+
 }
 
 export default ClassicModel

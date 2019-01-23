@@ -14,3 +14,5 @@
     </view>
   </view>
 </view>
+
+<g-search more="{{more}}" bind:cancel="onCancel" wx:else />

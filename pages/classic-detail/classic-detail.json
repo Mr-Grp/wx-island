@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "g-classic":"/pages/classic/classic"
+  }
+}
