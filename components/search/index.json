@@ -1,4 +1,8 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "g-tag": "/components/tag/index",
+    "g-book":"/components/book/index",
+    "g-loading":"/components/loading/index"
+  }
 }
