@@ -1,27 +1,41 @@
-// pages/classic-detail/index.js
-Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-    cid: Number,
-    type: Number
-  },
+import ClassicModel from '../../models/classic'
+import LikeModel from '../../models/like'
+const classicModel = new ClassicModel()
+const likeModel = new LikeModel()
 
-  /**
-   * 组件的初始数据
-   */
+Page({
+
   data: {
-
+    classic: null,
+    likeCount: 0,
+    likeStatus: false,
   },
 
+  onLoad (options) {
+    const { cid, type} = options
+    classicModel.getById({
+      cid,
+      type
+    }).then(res => {
+      this._getLikeStatus(res.id, res.type)
+      this.setData({
+        classic: res,
+        latest: classicModel.isLatest(res.index),
+        first: classicModel.isFirst(res.index)
+      })
+    })
+  },
 
-  /**
-   * 组件的方法列表
-   */
-  methods: {
-    onLoad(options) {
-      
-    }
+  _getLikeStatus(artID, category) {
+    likeModel.getClassicLikeStatus({
+      artID,
+      category
+    }).then((res) => {
+      this.setData({
+        likeCount: res.fav_nums,
+        likeStatus: res.like_status
+      })
+    })
   }
+
 })

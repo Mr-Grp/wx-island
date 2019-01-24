@@ -1,6 +1,10 @@
 {
-  "component": true,
   "usingComponents": {
-    "g-classic":"/pages/classic/classic"
+    "g-episode": "/components/episode/index",
+    "g-like": "/components/like/index",
+    "g-button": "/components/image-button/index",
+    "g-movie": "/components/classic/movie/index",
+    "g-music": "/components/classic/music/index",
+    "g-essay": "/components/classic/essay/index"
   }
 }

@@ -12,38 +12,20 @@ Page({
     latest: true,
     first: false,
   },
-  onShow() {
-    console.log(123)
-  },
   onLoad(options) {
     this._init()
   },
   _init() {
-
-    if (!cid) {
-      classicModel.getLatest()
-        .then(res => {
-          this.setData({
-            classic: res,
-            likeCount: res.fav_nums,
-            likeStatus: res.like_status
-          })
-          classicModel.setLatestIndex(res.index)
-          wx.setStorageSync(classicModel.getKey(res.index), res)
-        })
-    } else {
-      classicModel.getById({
-        cid,
-        type
-      }).then(res => {
-        this._getLikeStatus(res.id, res.type)
-        this.setData({
-          classic: res,
-          latest: classicModel.isLatest(res.index),
-          first: classicModel.isFirst(res.index)
-        })
+    classicModel.getLatest()
+    .then(res => {
+      this.setData({
+        classic: res,
+        likeCount: res.fav_nums,
+        likeStatus: res.like_status
       })
-    }
+      classicModel.setLatestIndex(res.index)
+      wx.setStorageSync(classicModel.getKey(res.index), res)
+    })
   },
 
   onLike(event) {

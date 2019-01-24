@@ -1,1 +1,15 @@
-<g-classic cid="{{cid}}" type="{{type}}" />
+<view class="container">
+  <view class="header">
+    <g-episode class="episode" index="{{classic.index}}" />
+    <view class="like-container">
+      <g-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+      <g-button class="share-btn" open-type="share">
+        <image class="share" slot="img" src="/images/icon/share.png" />
+      </g-button>
+    </view>
+  </view>
+  <g-movie wx:if="{{classic.type==100}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <g-music wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" title="{{classic.title}}"
+    src="{{classic.url}}" />
+  <g-essay wx:if="{{classic.type==300}}" img="{{classic.image}}" content="{{classic.content}}" />
+</view>
